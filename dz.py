@@ -26,17 +26,28 @@ class ContractEmployee(Employee):
     def calculateSalary(self):
         return self.hourlyRate * self.hoursWorked
 
+class DistanceEmployee(Employee):
+
+    def __init__(self, workvolumedone, dayRate):
+        self.workvolumedone = bool(workvolumedone)
+        self.dayRate = dayRate
+
+    def calculateSalary(self):
+        if self.workvolumedone == True:
+            return self.dayRate
 
 FTE = FullTimeEmployee(10)
 
 CE = ContractEmployee(10, 2)
 
+DE = DistanceEmployee(False, 10)
 
 def main():
     list1 = [FTE, CE], (Employee)
     for i in list1:
         a = FTE.displayInfo("Tim", "001"), FTE.calculateSalary()
         b = CE.displayInfo("Meow", "002"), CE.calculateSalary()
-    return a, b
+        c = DE.displayInfo("Bark", "003"), DE.calculateSalary()
+    return a, b, c
 
 print(main())
