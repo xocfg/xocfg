@@ -36,18 +36,17 @@ class DistanceEmployee(Employee):
         if self.workvolumedone == True:
             return self.dayRate
 
-FTE = FullTimeEmployee(int(input()))
+FTE = FullTimeEmployee(int(input("FTE earn per month: ")))
 
-CE = ContractEmployee(int(input(), input()))
+CE = ContractEmployee(int(input("CE worked: ")), int(input("CE earn per hour: ")))
 
-DE = DistanceEmployee(bool(input()), int(input())
+DE = DistanceEmployee(bool(input("DE done or not: ")), int(input("DE earn per day: ")))
 
 def main():
-    list1 = [FTE, CE], (Employee)
+    list1 = [FTE, CE, DE], (Employee)
     for i in list1:
-        a = FTE.displayInfo(f"{input(), input()}), FTE.calculateSalary()
-        b = CE.displayInfo(f"{input(), input()}), CE.calculateSalary()
-        c = DE.displayInfo(f"{input(), input()}), DE.calculateSalary()
-    return a, b, c
-
+        a = FTE.displayInfo(input("FTE name: "), input("FTE code:")), FTE.calculateSalary()
+        b = CE.displayInfo(input("CE name: "), input("CE code: ")), CE.calculateSalary()
+        c = DE.displayInfo(input("DE name: "), input("DE code:")), DE.calculateSalary()
+    return f"FTE: {a}, CE: {b}, DE: {c}"
 print(main())
